@@ -1,1 +1,1 @@
-web: gunicorn proxy_flask:app
+web: gunicorn proxy_flask:app --bind 0.0.0.0:$PORT
