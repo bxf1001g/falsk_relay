@@ -1,5 +1,8 @@
+import sys
+sys.stdout.reconfigure(line_buffering=True)
 import os, json, requests
 from flask import Flask, request, Response, abort
+
 
 FIREBASE_BASE  = os.environ.get("FIREBASE_BASE",  "https://relay-test1001-default-rtdb.asia-southeast1.firebasedatabase.app")
 RELAY_PATH     = os.environ.get("RELAY_PATH",     "/relay.json")
@@ -38,4 +41,5 @@ def relay_set():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "8000"))
+
     app.run(host="0.0.0.0", port=port)
